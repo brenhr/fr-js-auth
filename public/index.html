@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<title>Firebase Auth with Google</title>
+	<script src="/__/firebase/8.9.1/firebase-app.js"></script>
+	<script src="/__/firebase/8.9.1/firebase-auth.js"></script>
+  <script src="/__/firebase/8.9.1/firebase-firestore.js"></script>
+	<script src="/__/firebase/init.js"></script>
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.0.2/firebase-app.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyB0uCLs23fFUjOE8MjPSXhASCA4qcHxlrw",
+      authDomain: "fr-test-auth.firebaseapp.com",
+      projectId: "fr-test-auth",
+      storageBucket: "fr-test-auth.appspot.com",
+      messagingSenderId: "485692940978",
+      appId: "1:485692940978:web:deb9e2dbb5336238bb1fab"
+    };
+
+    const app = initializeApp(firebaseConfig);
+  </script>
+  <script src="googleAuth.js"></script>
+  <script type="text/javascript">
+    window.onload = function() {
+      initApp();
+    };
+  </script>
+</head>
+<body>
+	<div class="row">
+		<nav class="navbar navbar-light bg-light" style="width: 100%">
+			<span class="navbar-text">Test login.</span>
+		</nav>
+	</div>
+	<br>
+	<div class="row">
+		<div class="col-md-4"></div>
+		<div class="col-md-4">
+			<div class="card">
+				<div class="card-header" id="user-name">You are not logged in yet</div>
+				<div class="card-body">
+					<button class="btn btn-primary text-center" id="google-sign-in" onclick="googleSignIn()">Login with your Google account</button>
+          <ul class="list-group list-group-flush" id="profile-info">
+            <li class="list-group-item text-center">
+              <img  id="profile-photo" src="https://cdn.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png" style="height: 190px;">
+            </li>
+            <li class="list-group-item">
+              <p>
+                <span><strong>Name: </strong></span><span class="float-right" id="name">Brenda Hernandez</span>
+              </p>
+              <p>
+                <span><strong>Email: </strong></span><span class="float-right" id="email">breenn.hr@gmail.com</span>
+              </p>
+              <p>
+                <span><strong>uid: </strong></span><span class="float-right" id="uid">12345</span>
+              </p>
+            </li>
+            <li class="list-group-item">
+              <button class="btn btn-primary float-right" id="google-sign-out" onclick="signOut()">Sign out</button>
+            </li>
+          </ul> 
+				</div>
+			</div>
+		</div>
+		<div class="col-md-4"></div>
+	</div>
+
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>
